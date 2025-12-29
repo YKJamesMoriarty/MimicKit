@@ -1,4 +1,4 @@
---num_envs 4096
+--num_envs 2048
 
 --env_config data/envs/ase_humanoid_env.yaml
 --agent_config data/agents/ase_humanoid_agent.yaml
