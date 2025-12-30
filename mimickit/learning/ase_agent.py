@@ -111,6 +111,12 @@ class ASEAgent(amp_agent.AMPAgent):
         return
     
     def _step_env(self, action):
+        ### 步骤函数返回状态转换后的新观测值obs 和奖励r；信息字典（info）可用于存储来自环境的额外信息，如评论家或判别器的辅助观测值。
+        #done是种植标志，有四类：
+        #DoneFlags.SUCC.value：成功完成任务
+        #DoneFlags.FAIL.value：失败完成任务
+        #DoneFlags.TIME.value：超出最大时间步长
+        #DoneFlags.RESET.value：需要重置环境
         obs, r, done, info = super()._step_env(action)
         self._update_latents()
         return obs, r, done, info

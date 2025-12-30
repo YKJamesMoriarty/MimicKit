@@ -76,14 +76,27 @@ class IsaacGymEngine(engine.Engine):
         self._gym.prepare_sim(self._sim)
         self._build_sim_tensors()
         return
-    
+    '''@核心物理仿真驱动函数
+        作用：1.执行一次完整的 “控制命令→物理仿真→状态更新” 流程，
+         2.是连接Environment（下发命令）和物理世界（执行运动）的关键入口
+       @上游调用：Environment的step()函数'''
     def step(self):
-        self._apply_cmd()
-
+        #1.物理仿真执行
+        #将Environment转换后的标准化控制命令（c_t，比如关节位置/扭矩/速度指令）真正下发到物理仿真引擎的 DOF（自由度，如关节）上
+        self._apply_cmd() # 应用控制命令
+        # 2.多轮仿真步循环
+        # 若_sim_steps=10，则此函数会执行 10 次，让物理运动更平滑（比如关节从 0° 转到 30° 不是 “瞬移”，而是分 10 步渐变）
         for i in range(self._sim_steps):
+            # 仿真执行前的准备工作（隐含逻辑）
             self._pre_sim_step()
-            self._sim_step()
-            
+            # 执行单次物理仿真步，调用 IsaacGym 的底层 API 执行一次完整的物理计算
+            self._sim_step()# 仿真结果会被后续_refresh_sim_tensors()读取
+        # 3.更新状态张量：将 IsaacGym 底层的物理状态（C++ 张量）同步到 Python 端的 PyTorch 张量，供上层Environment读取
+        # （1）读取_root_state_raw（智能体根节点的位置、旋转、速度、角速度）；
+        # （2）读取_dof_state_raw（每个关节的位置、速度、受力）；
+        # （3）将这些原始数据转换为self对象的可访问张量（如self.root_states、self.dof_states）；
+        # （4）确保张量的设备（CPU/GPU）、数据类型与框架一致（对应create_obj中device=self._device）。
+        # 核心价值：上层Environment无法直接访问 IsaacGym 的 C++ 底层数据，此函数是 “数据桥梁”；Environment后续会基于这些张量构建观测o_t，传给Agent做决策。
         self._refresh_sim_tensors()
         return
 
@@ -527,7 +540,9 @@ class IsaacGymEngine(engine.Engine):
             if (self._control_mode == engine.ControlMode.none):
                 pass
             elif (self._control_mode == engine.ControlMode.pos):
+                # 读取self._obj_dof_cmd中存储的控制命令（如关节目标位置、扭矩）
                 cmd_buf = self._get_dof_cmd_buf()
+                # 根据当前控制模式（pos/vel/torque等），将命令映射到 IsaacGym 的 DOF 控制接口；
                 cmd_tensor = gymtorch.unwrap_tensor(cmd_buf)
                 self._gym.set_dof_position_target_tensor(self._sim, cmd_tensor)
             elif (self._control_mode == engine.ControlMode.vel):
@@ -561,7 +576,9 @@ class IsaacGymEngine(engine.Engine):
         return
 
     def _sim_step(self):
+        # （IsaacGym 核心 API）：根据牛顿定律计算所有物体的运动（关节旋转、重心位移、碰撞反作用力等）；
         self._gym.simulate(self._sim)
+        # 获取仿真结果（如关节新位置、速度、受力）；更新引擎内部的物理状态缓存（如_root_state_raw（根节点状态）、_dof_state_raw（DOF 状态））。
         if (self._device == "cpu"):
             self._gym.fetch_results(self._sim, True)
         return
