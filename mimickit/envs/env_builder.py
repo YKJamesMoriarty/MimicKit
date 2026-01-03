@@ -45,6 +45,6 @@ def build_env(env_file, num_envs, device, visualize):
     return env
 
 def load_env_file(file):
-    with open(file, "r") as stream:
+    with open(file, "r", encoding="utf-8") as stream:
         env_config = yaml.safe_load(stream)
     return env_config

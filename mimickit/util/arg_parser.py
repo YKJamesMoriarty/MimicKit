@@ -40,7 +40,7 @@ class ArgParser(object):
 
     def load_file(self, filename):
         succ = False
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding="utf-8") as file:
             lines = RE.split(r'[\n\r]+', file.read())
             file.close()
 
