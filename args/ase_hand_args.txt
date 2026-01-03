@@ -1,0 +1,10 @@
+--mode train
+--num_envs 512
+
+--env_config data/envs/ase_hand_env.yaml
+--agent_config data/agents/ase_hand_agent.yaml
+
+--log_file output/hand_boxing/log.txt
+--out_model_file output/hand_boxing/model_1.pt
+
+--visualize false
