@@ -29,6 +29,10 @@ class IsaacGymEngine(engine.Engine):
         self._timestep = 1.0 / control_freq
         self._sim_steps = int(sim_freq / control_freq)
         sim_timestep = 1.0 / sim_freq
+        
+        # 从配置读取 substeps，默认为 1
+        self._substeps = config.get("substeps", 1)
+        
         self._sim = self._create_simulator(sim_timestep, visualize)
 
         self._ground_contact_height = config.get("ground_contact_height", 0.3)
@@ -629,7 +633,7 @@ class IsaacGymEngine(engine.Engine):
     
     def _build_sim_params(self, sim_timestep):
         sim_params = gymapi.SimParams()
-        sim_params.substeps = 1
+        sim_params.substeps = self._substeps  # 使用配置文件中的 substeps
         sim_params.dt = sim_timestep
         sim_params.num_client_threads = 0
         
