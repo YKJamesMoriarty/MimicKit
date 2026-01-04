@@ -7,6 +7,13 @@ class MPOptimizer():
 
     def __init__(self, config, param_list):
         self._param_list = param_list
+        
+        if (len(param_list) > 0 and isinstance(param_list[0], dict)):
+            flat_params = []
+            for group in param_list:
+                flat_params.extend(group["params"])
+            self._param_list = flat_params
+
         self._grad_clip = float(config.get("grad_clip", 0.0))
         self._optimizer = self._build_optimizer(config, param_list)
         self._steps = 0

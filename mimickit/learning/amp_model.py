@@ -26,6 +26,9 @@ class AMPModel(ppo_model.PPOModel):
         weights.append(torch.flatten(self._disc_logits.weight))
         return weights
 
+    def get_disc_params(self):
+        return list(self._disc_layers.parameters()) + list(self._disc_logits.parameters())
+
     def _build_nets(self, config, env):
         super()._build_nets(config, env)
         self._build_disc(config, env)
@@ -49,4 +52,3 @@ class AMPModel(ppo_model.PPOModel):
         obs_space = env.get_disc_obs_space()
         input_dict = {"disc_obs": obs_space}
         return input_dict
-    

@@ -5,6 +5,7 @@ import learning.amp_model as amp_model
 import learning.experience_buffer as experience_buffer
 import learning.normalizer as normalizer
 import learning.ppo_agent as ppo_agent
+import learning.mp_optimizer as mp_optimizer
 import util.torch_util as torch_util
 
 class AMPAgent(ppo_agent.PPOAgent):
@@ -217,3 +218,28 @@ class AMPAgent(ppo_agent.PPOAgent):
             disc_r = -torch.log(torch.maximum(1 - prob, torch.tensor(0.0001, device=self._device)))
             disc_r *= self._disc_reward_scale
         return disc_r
+
+    def _build_optimizer(self, config):
+        opt_config = config["optimizer"]
+        
+        if ("disc_learning_rate" in opt_config):
+            disc_lr = float(opt_config["disc_learning_rate"])
+            
+            disc_params = self._model.get_disc_params()
+            disc_params_set = set(disc_params)
+            
+            other_params = []
+            for p in self.parameters():
+                if (p.requires_grad and (p not in disc_params_set)):
+                    other_params.append(p)
+            
+            params = [
+                {"params": other_params},
+                {"params": disc_params, "lr": disc_lr}
+            ]
+            
+            self._optimizer = mp_optimizer.MPOptimizer(opt_config, params)
+        else:
+            super()._build_optimizer(config)
+            
+        return
