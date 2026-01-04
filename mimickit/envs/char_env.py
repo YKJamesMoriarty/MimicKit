@@ -242,6 +242,33 @@ class CharEnv(sim_env.SimEnv):
     def _get_char_id(self):
         return self._char_ids[0]
     
+    def _check_physics_explosion(self):
+        """检测物理爆炸并重置异常环境，防止 NaN 传播"""
+        char_id = self._get_char_id()
+        root_pos = self._engine.get_root_pos(char_id)
+        root_vel = self._engine.get_root_vel(char_id)
+        
+        # 检测位置是否异常 (超过 100m)
+        pos_exploded = torch.any(torch.abs(root_pos) > 100, dim=-1)
+        
+        # 检测速度是否异常 (超过 100 m/s)
+        vel_exploded = torch.any(torch.abs(root_vel) > 100, dim=-1)
+        
+        # 检测 NaN
+        pos_nan = torch.any(torch.isnan(root_pos), dim=-1)
+        vel_nan = torch.any(torch.isnan(root_vel), dim=-1)
+        
+        exploded = pos_exploded | vel_exploded | pos_nan | vel_nan
+        
+        if torch.any(exploded):
+            exploded_ids = exploded.nonzero(as_tuple=False).squeeze(-1)
+            # 重置爆炸的环境
+            self._reset_envs(exploded_ids)
+            self._engine.update_sim_state()
+            # 标记这些环境为终止
+            self._done_buf[exploded_ids] = 1
+        return
+    
     def _update_reward(self):
         char_id = self._get_char_id()
         char_root_pos = self._engine.get_root_pos(char_id)

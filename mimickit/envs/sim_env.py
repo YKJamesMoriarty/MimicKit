@@ -128,6 +128,8 @@ class SimEnv(base_env.BaseEnv):
     def _update_observations(self, env_ids=None):
         if (env_ids is None or len(env_ids) > 0):
             obs = self._compute_obs(env_ids)
+            # 裁剪观测值，防止极端值导致 NaN 传播
+            obs = torch.clamp(obs, min=-100.0, max=100.0)
             if (env_ids is None):
                 self._obs_buf[:] = obs
             else:
@@ -137,10 +139,19 @@ class SimEnv(base_env.BaseEnv):
     def _post_physics_step(self):
         self._update_time()
         self._update_misc()
+        
+        # 检测物理爆炸并重置异常环境
+        self._check_physics_explosion()
+        
         self._update_observations()
         self._update_info()
         self._update_reward()
         self._update_done()
+        return
+    
+    def _check_physics_explosion(self):
+        """检测物理爆炸并重置异常环境，防止 NaN 传播"""
+        # 默认实现为空，子类可以重写
         return
 
     def _build_engine(self, engine_config, num_envs, device, visualize):
