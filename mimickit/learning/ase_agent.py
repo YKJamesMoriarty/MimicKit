@@ -192,14 +192,17 @@ class ASEAgent(amp_agent.AMPAgent):
         return info
 
     def _compute_rewards(self):
+        # 1. 从环境获取任务奖励 (Task Reward)
         task_r = self._exp_buffer.get_data_flat("reward")
+        # 2. 获取判别器观测数据
         disc_obs = self._exp_buffer.get_data_flat("disc_obs")
         norm_disc_obs = self._disc_obs_norm.normalize(disc_obs)
         latents = self._exp_buffer.get_data_flat("latents")
-
+        # 3. 计算判别器奖励 (Style Reward)
         disc_r = self._calc_disc_rewards(norm_disc_obs)
+        # 4. 计算编码器奖励 (Encoder Reward，用于技能多样性)
         enc_r = self._calc_enc_rewards(tar_latents=latents, norm_enc_obs=norm_disc_obs)
-
+        # 5. 加权求和得到最终奖励
         r = self._task_reward_weight * task_r \
             + self._disc_reward_weight * disc_r \
             + self._enc_reward_weight * enc_r
