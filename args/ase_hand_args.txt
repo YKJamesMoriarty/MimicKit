@@ -2,6 +2,8 @@
 --num_envs 512
 
 --env_config data/envs/ase_hand_env.yaml
+
+--logger wandb
 --agent_config data/agents/ase_hand_agent.yaml
 
 --log_file output/hand_boxing/log.txt
