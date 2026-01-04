@@ -1,0 +1,496 @@
+motions:
+  # 基础站姿/重心转移动作（权重3.0）
+  - file: "data/motions/hand/stance_orthodox_idle_normal_1.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_orthodox_idle_normal_2.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_orthodox_idle_normal_3.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_orthodox_idle_normal_4.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_orthodox_idle_normal_5.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_orthodox_idle_slow_1.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_orthodox_idle_slow_2.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_orthodox_idle_slow_3.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_orthodox_idle_slow_4.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_orthodox_idle_slow_5.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_weight_shift_left_1.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_weight_shift_left_2.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_weight_shift_left_3.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_weight_shift_left_4.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_weight_shift_left_5.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_weight_shift_right_1.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_weight_shift_right_2.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_weight_shift_right_3.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_weight_shift_right_4.pkl"
+    weight: 3.0
+  - file: "data/motions/hand/stance_weight_shift_right_5.pkl"
+    weight: 3.0
+
+  # Cross（直拳）动作（权重1.0）
+  - file: "data/motions/hand/cross_right_fast_body1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_fast_body2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_fast_body3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_fast_body4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_fast_body5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_fast_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_fast_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_fast_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_fast_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_fast_head5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_normal_body1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_normal_body2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_normal_body3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_normal_body4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_normal_body5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_normal_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_normal_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_normal_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_normal_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_normal_head5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_slow_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_slow_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_slow_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_slow_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/cross_right_slow_head5.pkl"
+    weight: 1.0
+
+  # Hook（勾拳）动作（权重1.0）
+  - file: "data/motions/hand/hook_left_fast_head_flat1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_fast_head_flat2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_fast_head_flat3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_fast_head_flat4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_fast_head_flat5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_body1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_body2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_body3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_body4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_body5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_head_flat1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_head_flat2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_head_flat3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_head_flat4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_head_flat5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_head_up1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_head_up2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_head_up3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_head_up4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_normal_head_up5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_slow_head_flat1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_slow_head_flat2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_slow_head_flat3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_slow_head_flat4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_left_slow_head_flat5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_fast_head_flat1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_fast_head_flat2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_fast_head_flat3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_fast_head_flat4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_fast_head_flat5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_body1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_body2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_body3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_body4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_body5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_head_flat1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_head_flat2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_head_flat3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_head_flat4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_head_flat5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/hook_right_normal_head_flat6.pkl"
+    weight: 1.0
+
+  # Jab（刺拳）动作（权重1.0）
+  - file: "data/motions/hand/jab_left_fast_body1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_fast_body2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_fast_body3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_fast_body4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_fast_body5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_fast_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_fast_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_fast_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_fast_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_fast_head5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_normal_body1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_normal_body2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_normal_body3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_normal_body4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_normal_body5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_normal_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_normal_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_normal_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_normal_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_normal_head5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_body1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_body2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_body3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_body4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_body5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_body_downward1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_body_downward2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_body_downward3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_body_downward4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_body_downward5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/jab_left_slow_head5.pkl"
+    weight: 1.0
+
+  # Pivot（转身）动作（权重1.0）
+  - file: "data/motions/hand/pivot_left_90_slow_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/pivot_left_90_slow_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/pivot_left_90_slow_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/pivot_left_90_slow_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/pivot_left_90_slow_5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/pivot_right_90_slow_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/pivot_right_90_slow_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/pivot_right_90_slow_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/pivot_right_90_slow_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/pivot_right_90_slow_5.pkl"
+    weight: 1.0
+
+  # Shuffle（滑步）动作（权重1.0）
+  - file: "data/motions/hand/shuffle_backward_normal_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_backward_normal_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_backward_normal_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_backward_normal_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_backward_normal_5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_backward_normal_6.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_forward_normal_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_forward_normal_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_forward_normal_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_forward_normal_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_forward_normal_5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/shuffle_forward_normal_6.pkl"
+    weight: 1.0
+
+  # Slip（闪避）动作（权重1.0）
+  - file: "data/motions/hand/slip_left_fast1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_left_fast2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_left_fast3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_left_fast4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_left_fast5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_left_slow1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_left_slow2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_left_slow3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_left_slow4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_left_slow5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_right_fast1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_right_fast2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_right_fast3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_right_fast4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_right_fast5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_right_slow1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_right_slow2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_right_slow3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_right_slow4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/slip_right_slow5.pkl"
+    weight: 1.0
+
+  # Step（迈步）动作（权重1.0）
+  - file: "data/motions/hand/step_back_large_fast_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_large_fast_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_large_fast_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_large_fast_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_large_fast_5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_small_normal_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_small_normal_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_small_normal_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_small_normal_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_small_normal_5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_small_slow_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_small_slow_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_small_slow_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_small_slow_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_back_small_slow_5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_large_fast_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_large_fast_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_large_fast_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_large_fast_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_large_fast_5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_small_normal_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_small_normal_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_small_normal_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_small_normal_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_small_normal_5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_small_slow_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_small_slow_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_small_slow_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_small_slow_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_forward_small_slow_5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_left_side_normal_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_left_side_normal_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_left_side_normal_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_left_side_normal_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_left_side_normal_5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_right_side_normal_1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_right_side_normal_2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_right_side_normal_3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_right_side_normal_4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/step_right_side_normal_5.pkl"
+    weight: 1.0
+
+  # Swing（摆拳）动作（权重1.0）
+  - file: "data/motions/hand/swing_right_fast_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/swing_right_fast_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/swing_right_fast_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/swing_right_fast_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/swing_right_fast_head5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/swing_right_normal_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/swing_right_normal_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/swing_right_normal_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/swing_right_normal_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/swing_right_normal_head5.pkl"
+    weight: 1.0
+
+  # Uppercut（上勾拳）动作（权重1.0）
+  - file: "data/motions/hand/uppercut_left_normal_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_left_normal_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_left_normal_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_left_normal_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_left_normal_head5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_left_slow_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_left_slow_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_left_slow_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_left_slow_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_left_slow_head5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_fast_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_fast_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_fast_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_fast_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_fast_head5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_normal_body1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_normal_body2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_normal_body3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_normal_body4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_normal_body5.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_normal_head1.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_normal_head2.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_normal_head3.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_normal_head4.pkl"
+    weight: 1.0
+  - file: "data/motions/hand/uppercut_right_normal_head5.pkl"
+    weight: 1.0
