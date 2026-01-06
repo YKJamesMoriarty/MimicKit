@@ -16,11 +16,11 @@ model:
 optimizer:
     type: "Adam"
     learning_rate: 2e-5
-    disc_learning_rate: 5e-6
+    disc_learning_rate: 2e-6
 
 discount: 0.99
 steps_per_iter: 32
-iters_per_output: 200
+iters_per_output: 1 #记录output到log的频率
 test_episodes: 32
 normalizer_samples: 500000000
 
@@ -37,9 +37,11 @@ critic_loss_weight: 1.0
 disc_buffer_size: 50000
 disc_replay_samples: 1000
 disc_batch_size: 1024
-disc_loss_weight: 5.0
-disc_logit_reg: 0.01
-disc_grad_penalty: 5
+# 判别器 loss 在总 loss 中的权重
+disc_loss_weight: 3.0 # 从5.0 降低到 3.0
+disc_logit_reg: 0.01 
+# 高梯度惩罚（grad_penalty） = 判别器更保守、更稳定，但在判别器已经过强的情况下，这反而让它维持在"过强"的状态
+disc_grad_penalty: 3 #从 5 降低为 3（梯度惩罚减弱）
 disc_weight_decay: 0.0001
 disc_reward_scale: 2
 
