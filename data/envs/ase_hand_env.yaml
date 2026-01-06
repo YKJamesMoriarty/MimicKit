@@ -25,6 +25,32 @@ env:
     contact_bodies: ["left_knee_link", "left_ankle_pitch_link", "left_ankle_roll_link", "right_knee_link", "right_ankle_pitch_link", "right_ankle_roll_link"]
     
     motion_file: "data/datasets/dataset_hand_boxing.yaml"
+        
+    # ========== joint_err_w 计算规则说明 ==========
+    # joint_err_w 数量 = XML中<body>标签数量 - 1 (排除root body)
+    # 
+    # 计算方法: 统计 char_file 指定的 XML 中所有 <body name="..."> 的数量
+    #   - humanoid.xml:       15 bodies → joint_err_w 需要 14 个元素
+    #   - g1.xml:             31 bodies → joint_err_w 需要 30 个元素
+    #   - g1_mocap_29dof.xml: 38 bodies → joint_err_w 需要 37 个元素
+    # 
+    # 注意: body数量 ≠ DOF数量 ≠ joint数量
+    #   - DOF是自由度(如29dof)，joint是XML中<joint>标签数
+    #   - 但 joint_err_w 只按 body 数量计算，每个非root body对应一个权重
+    #   - 即使某个body没有joint(如head_link)，也需要一个权重位(通常设为0.0)
+    # 
+    # 代码位置: mimickit/envs/deepmimic_env.py _parse_joint_err_weights()
+    #   num_joints = self._kin_char_model.get_num_joints()  # = body数量
+    #   assert(self._joint_err_w.shape[-1] == num_joints - 1)
+    # =============================================
+    # g1.xml body顺序 (共31个, joint_err_w对应索引1-30):
+    # 0:pelvis(root,不计入) 
+    # 左腿: 1:left_hip_pitch 2:left_hip_roll 3:left_hip_yaw 4:left_knee 5:left_ankle_pitch 6:left_ankle_roll
+    # 右腿: 7:right_hip_pitch 8:right_hip_roll 9:right_hip_yaw 10:right_knee 11:right_ankle_pitch 12:right_ankle_roll
+    # 躯干: 13:waist_yaw 14:waist_roll 15:torso 16:head(无joint,权重=0)
+    # 左臂: 17:left_shoulder_pitch 18:left_shoulder_roll 19:left_shoulder_yaw 20:left_elbow 21:left_wrist_roll 22:left_wrist_pitch 23:left_wrist_yaw
+    # 右臂: 24:right_shoulder_pitch 25:right_shoulder_roll 26:right_shoulder_yaw 27:right_elbow 28:right_wrist_roll 29:right_wrist_pitch 30:right_wrist_yaw
+    # (注: 索引从1开始对应joint_err_w[0], 即body索引-1=数组索引)
     # 关节误差权重数组，用于计算模仿奖励时各个关节的权重分配。
     # joint_err_w 权重数组（30个元素，对应 body 索引 1-30）
     # 索引:  1-3:左髋  4:左膝  5-6:左踝  7-9:右髋  10:右膝  11-12:右踝  13-15:腰  16:头(无关节)  17-19:左肩  20:左肘  21-23:左腕  24-26:右肩  27:右肘  28-30:右腕
