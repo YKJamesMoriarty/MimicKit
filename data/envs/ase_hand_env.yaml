@@ -76,6 +76,7 @@ engine:
     
     control_mode: "pos"
     control_freq: 200
+    # 以下两个操作可以解决观测信息爆炸的问题
     sim_freq: 400  # 从 200 提高到 400 (物理计算更精细)
     substeps: 4  # 添加子步数 (每个控制步做 4 次物理计算)
     env_spacing: 5 
